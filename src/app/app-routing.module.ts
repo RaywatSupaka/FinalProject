@@ -1,28 +1,25 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
-import { ResgistComponent } from './resgist/resgist.component';
-import { InformationComponent } from './information/information.component';
-import { NewspageComponent } from './newspage/newspage.component';
+import { HomepageComponent } from './homepage/homepage.component';
+import { DBUpageComponent } from './UserManagement/dbupage/dbupage.component';
+import { LayoutComponent } from './layout/layout.component';
 
 const routes: Routes = [
   {
   path:'',
-  component:NewspageComponent,
+  component:HomepageComponent,
+  pathMatch:'full'
 },{
-  path:'A',
+  path:'login',
   component:LoginComponent
 },{
-  path:'D',
-  component:InformationComponent
-},
-{
-  path:'B',
-  component:ResgistComponent,
-  children:[
+  path:'',
+  component:LayoutComponent,
+  children: [
     {
-      path:'A',
-      component:LoginComponent
+      path:'dbupage',
+      component:DBUpageComponent
     }
   ]
 }

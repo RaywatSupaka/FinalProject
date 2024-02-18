@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ResgistComponent } from './resgist.component';
+import { PFUpageComponent } from './pfupage.component';
 
-describe('ResgistComponent', () => {
-  let component: ResgistComponent;
-  let fixture: ComponentFixture<ResgistComponent>;
+describe('PFUpageComponent', () => {
+  let component: PFUpageComponent;
+  let fixture: ComponentFixture<PFUpageComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ResgistComponent ]
+      declarations: [ PFUpageComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ResgistComponent);
+    fixture = TestBed.createComponent(PFUpageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
