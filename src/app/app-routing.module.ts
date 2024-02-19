@@ -14,14 +14,8 @@ const routes: Routes = [
   path:'login',
   component:LoginComponent
 },{
-  path:'',
-  component:LayoutComponent,
-  children: [
-    {
-      path:'dbupage',
-      component:DBUpageComponent
-    }
-  ]
+  path:'dbupage',
+  component:DBUpageComponent,
 }
 ];
 

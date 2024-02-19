@@ -12,18 +12,12 @@ import { API_URLS } from '../Interface/API_URLS';
 export class CustomeInterceptor implements HttpInterceptor {
 
   constructor() {}
-  
-  private static readonly noTokenRequired: { [key: string]: boolean } = { // เพิ่ม URL อื่น ๆ ที่ไม่ต้องการ Token ตามต้องการ
-    [API_URLS.LOGIN]: false,
-    // [API_URLS.ADD_USER]: false,
-
-  };
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
 
     // ตรวจสอบว่า request นี้คือ request ที่ไม่ต้องการ Token หรือไม่
-    if (CustomeInterceptor.noTokenRequired[request.url]) {
-      return next.handle(request);  // ไม่แนบ Token
+    if (request.url.includes(API_URLS.LOGIN)) {
+      return next.handle(request);  // ไม่แนบ Token สำหรับ request สำหรับ login
     }
 
     // สำหรับ request ที่ต้องการแนบ Token
