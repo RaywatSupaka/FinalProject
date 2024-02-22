@@ -1,0 +1,27 @@
+body{
+  border-radius: 5px;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	font-family: 'Montserrat', sans-serif;
+}
+
+input,select {
+    padding: 5px;
+    text-align: left;
+    padding-top: 5px;
+    width: 150px;
+    height: 30px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  } 
+.modal-header {
+    padding: 8px !important;
+    border-bottom: none !important;
+    background-color: cornflowerblue;
+    border-radius: 5px;
+}
+  .label {
+    font-size: 13px;
+  }

@@ -3,7 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { DBUpageComponent } from './UserManagement/dbupage/dbupage.component';
-import { LayoutComponent } from './layout/layout.component';
+import { PFUpageComponent } from './UserManagement/pfupage/pfupage.component';
+import { UserinfomodalComponent } from './Model/userinfomodal/userinfomodal.component';
 
 const routes: Routes = [
   {
@@ -15,7 +16,13 @@ const routes: Routes = [
   component:LoginComponent
 },{
   path:'dbupage',
-  component:DBUpageComponent,
+  component:DBUpageComponent
+},{
+  path:'pfupage',
+  component:PFUpageComponent
+},{
+  path:'mdpage',
+  component:UserinfomodalComponent
 }
 ];
 

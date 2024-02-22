@@ -14,18 +14,5 @@ export class AppComponent {
   constructor( private http: HttpClient  ) {
 
   }
-  
-  // fetchDataFromDatabase() {
-  //   const params = new HttpParams().set('title', 'Json'); // กำหนด params
-  
-  //   this.http.get('http://localhost:8778/flukeController/findAll', { params }).subscribe(
-  //     (data) => {
-  //       console.log('Fetched data:', data);
-       
-  //     },
-  //     (error) => {
-  //       console.error('Failed to fetch data:', error);
-  //     }
-  //   );
-  //   }  
+   
 }

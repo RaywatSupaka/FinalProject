@@ -7,11 +7,12 @@ import {
 } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { API_URLS } from '../Interface/API_URLS';
+import { TokenService } from './token.service';
 
 @Injectable()
 export class CustomeInterceptor implements HttpInterceptor {
 
-  constructor() {}
+  constructor(private tokenService: TokenService) {}
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
 
@@ -21,7 +22,7 @@ export class CustomeInterceptor implements HttpInterceptor {
     }
 
     // สำหรับ request ที่ต้องการแนบ Token
-    const token = localStorage.getItem('loginToken');
+    const token = this.tokenService.getToken();
     const newCloneRequest = request.clone({
       setHeaders:{
         Authorization : `Bearer ${token}`

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modal</title>
+</head>
+
+<body>
+  <div class="modal-header">
+      <h4 class="modal-title">แก้ไขข้อมูล</h4>
+    <button type="button" class="close pull-left" (click)="onClose()" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <!-------------------------------------------------------- Body ------------------------------------------------------>
+  <div class="container col-12">
+    <div class="row">
+      <div class="col-6">
+        <div class="row" style="padding: 3px; text-align:right; padding-top: 30px;">
+          <div class="col-3">
+            <label class="contro-label" style="font-size: 13px;">Uid</label>
+          </div>
+          <div class="col-9">
+            <input type="text" [(ngModel)]="userDetails.uid" name="uid" />
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6">
+        <div class="row" style="padding: 3px; text-align:right; padding-top: 30px;">
+          <div class="col-3">
+            <label class="contro-label" style="font-size: 13px;">Nid</label>
+          </div>
+          <div class="col-9">
+            <input type="text" [(ngModel)]="userDetails.nid" name="nid" />
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6">
+        <div class="row" style="padding: 3px;text-align:right;padding-top: 30px;">
+          <div class="col-3">
+            <label class="contro-label" style="font-size: 13px;">Username</label>
+          </div>
+          <div class="col-9">
+            <input type="text" [(ngModel)]="userDetails.username" name="username" />
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6">
+        <div class="row" style="padding: 3px;text-align:right;padding-top: 30px;">
+          <div class="col-3">
+            <label class="contro-label" style="font-size: 13px;">Age</label>
+          </div>
+          <div class="col-9">
+            <input type="text" [(ngModel)]="userDetails.age" name="age" />
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6">
+        <div class="row" style="padding: 3px;text-align:right;padding-top: 30px;">
+          <div class="col-3">
+            <label class="contro-label" style="font-size: 13px;">Address</label>
+          </div>
+          <div class="col-9">
+            <input type="text" [(ngModel)]="userDetails.address" name="address" />
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-------------------------------------------------------- Body ------------------------------------------------------>
+
+  <div class="modal-footer d-flex justify-content-center ">
+    <div class="col-12" style="text-align:center;">
+      <button type="submit" class="btn btn-primary" (click)="onSave()"></button>
+      <button type="button" class="btn btn-dark btn-pill" (click)="onClose()">X</button>
+    </div>
+  </div>
+
+</body>
+
+</html>

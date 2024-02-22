@@ -11,6 +11,10 @@ import { DBUpageComponent } from './UserManagement/dbupage/dbupage.component';
 import { PFUpageComponent } from './UserManagement/pfupage/pfupage.component';
 import { LayoutComponent } from './layout/layout.component';
 import { CustomeInterceptor } from './service/custome.interceptor';
+import { UserinfomodalComponent } from './Model/userinfomodal/userinfomodal.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ModalModule } from 'ngx-bootstrap/modal';
+import { TooltipModule } from 'ngx-bootstrap/tooltip';
 
 @NgModule({
   declarations: [
@@ -19,14 +23,21 @@ import { CustomeInterceptor } from './service/custome.interceptor';
     HomepageComponent,
     DBUpageComponent,
     PFUpageComponent,
-    LayoutComponent
+    LayoutComponent,
+    UserinfomodalComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     FormsModule,
+    AppRoutingModule,
     CommonModule,
-    HttpClientModule 
+    HttpClientModule,
+    CommonModule,
+    BrowserModule,
+    BrowserAnimationsModule,
+    ModalModule.forRoot(),
+    TooltipModule.forRoot(),
+    
   ],
   providers: [
     {
