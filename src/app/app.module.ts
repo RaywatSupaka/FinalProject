@@ -15,6 +15,8 @@ import { UserinfomodalComponent } from './Model/userinfomodal/userinfomodal.comp
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
+import { DbapageComponent } from './AdminManagement/dbapage/dbapage.component';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,8 @@ import { TooltipModule } from 'ngx-bootstrap/tooltip';
     DBUpageComponent,
     PFUpageComponent,
     LayoutComponent,
-    UserinfomodalComponent
+    UserinfomodalComponent,
+    DbapageComponent
   ],
   imports: [
     BrowserModule,
@@ -37,6 +40,7 @@ import { TooltipModule } from 'ngx-bootstrap/tooltip';
     BrowserAnimationsModule,
     ModalModule.forRoot(),
     TooltipModule.forRoot(),
+    MatSlideToggleModule,
     
   ],
   providers: [

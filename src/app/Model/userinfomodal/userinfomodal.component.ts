@@ -52,7 +52,8 @@ export class UserinfomodalComponent {
   onSave() {
     let isDataValid = true;
   
-    if (!this.userDetails.uid || !this.userDetails.nid || !this.userDetails.username || !this.userDetails.age || !this.userDetails.address) {
+    if (!this.userDetails.uid || !this.userDetails.nid || !this.userDetails.username 
+      || !this.userDetails.age || !this.userDetails.address) {
       isDataValid = false;
       window.alert('กรุณากรอกข้อมูลให้ครบถ้วน');
     }
@@ -68,7 +69,8 @@ export class UserinfomodalComponent {
         roles: this.userDetails.roles
       }
   
-      this.http.put('http://localhost:8080' + API_URLS.USEREDIT, newData, { responseType: 'text' }).subscribe((res: any) => {
+      this.http.put('http://localhost:8080' + API_URLS.USEREDIT, newData, { responseType: 'text' })
+      .subscribe((res: any) => {
         if (res) {
           alert(res);
         } else {

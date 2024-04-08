@@ -17,7 +17,7 @@ export class CustomeInterceptor implements HttpInterceptor {
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
 
     // ตรวจสอบว่า request นี้คือ request ที่ไม่ต้องการ Token หรือไม่
-    if (request.url.includes(API_URLS.LOGIN)) {
+    if (request.url.includes(API_URLS.LOGIN) || request.url.includes(API_URLS.REGIST)) {
       return next.handle(request);  // ไม่แนบ Token สำหรับ request สำหรับ login
     }
 

@@ -3,6 +3,7 @@ import { Component ,ElementRef, OnInit, ViewChild  } from '@angular/core';
 import { Router } from '@angular/router';
 import { API_URLS } from '../Interface/API_URLS';
 import { LoginObj } from '../Interface/Login_OBJ';
+import { Regist } from '../Interface/Regist_OBJ';
 
 @Component({
   selector: 'app-login',
@@ -36,7 +37,7 @@ export class LoginComponent implements OnInit{
 
   onLogin() {
     debugger;
-    this.http.post('http://localhost:8080'+ API_URLS.LOGIN, this.loginObject, { responseType: 'json' }).subscribe((res: any) => {
+    this.http.post(API_URLS.LOCAL + API_URLS.LOGIN, this.loginObject, { responseType: 'json' }).subscribe((res: any) => {
         if (res.result) {
             alert(res.message);
             localStorage.setItem('loginToken', res.data.token);
@@ -46,6 +47,28 @@ export class LoginComponent implements OnInit{
         }
     });
     }
+
+    registObject: Regist = {
+      uid: '',
+      nid: '',
+      username: '',
+      password: '',
+      age: 0,
+      address: '',
+      roles: ''
+    };
+  
+    onRegister() {
+      debugger;
+      this.http.post(API_URLS.LOCAL + API_URLS.REGIST, this.registObject, { responseType: 'text' }).subscribe((res: any) => {
+          if (res.result) {
+              alert(res);
+              this.router.navigateByUrl('/login');
+          } else {
+              alert(res);
+          }
+      });
+      }
   
 
 }

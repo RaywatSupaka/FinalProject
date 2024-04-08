@@ -12,7 +12,6 @@ export class DBUpageComponent {
 
   constructor(private http: HttpClient){
     this.loaduser();
-    console.log("Hello");
   }
 
   loaduser(){
