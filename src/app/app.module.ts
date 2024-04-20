@@ -9,14 +9,21 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { DBUpageComponent } from './UserManagement/dbupage/dbupage.component';
 import { PFUpageComponent } from './UserManagement/pfupage/pfupage.component';
-import { LayoutComponent } from './layout/layout.component';
 import { CustomeInterceptor } from './service/custome.interceptor';
 import { UserinfomodalComponent } from './Model/userinfomodal/userinfomodal.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
-import { DbapageComponent } from './AdminManagement/dbapage/dbapage.component';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { BlankComponent } from './layout/blank/blank.component';
+import { FullpageComponent } from './layout/fullpage/fullpage.component';
+import { HeaderComponent } from './layout/fullpage/header/header.component';
+import { SidebarComponent } from './layout/fullpage/sidebar/sidebar.component';
+import { MaterialModule } from './material.module';
+import { TablerIconsModule } from 'angular-tabler-icons';
+import * as TablerIcons from 'angular-tabler-icons/icons';
+import { BrandingComponent } from './layout/fullpage/sidebar/branding.component';
+import { AppNavItemComponent } from './layout/fullpage/sidebar/nav-item/nav-item.component';
 
 @NgModule({
   declarations: [
@@ -25,9 +32,13 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
     HomepageComponent,
     DBUpageComponent,
     PFUpageComponent,
-    LayoutComponent,
     UserinfomodalComponent,
-    DbapageComponent
+    BlankComponent,
+    FullpageComponent,
+    HeaderComponent,
+    SidebarComponent,
+    BrandingComponent,
+    AppNavItemComponent
   ],
   imports: [
     BrowserModule,
@@ -35,13 +46,12 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
     AppRoutingModule,
     CommonModule,
     HttpClientModule,
-    CommonModule,
-    BrowserModule,
     BrowserAnimationsModule,
     ModalModule.forRoot(),
     TooltipModule.forRoot(),
     MatSlideToggleModule,
-    
+    MaterialModule,
+    TablerIconsModule.pick(TablerIcons),
   ],
   providers: [
     {
