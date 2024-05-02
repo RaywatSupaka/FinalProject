@@ -81,11 +81,11 @@ export class WebsitemanagementComponent {
     if (isConfirmed) {
       this.http.delete(API_URLS.LOCAL + API_URLS.WEBSITEDETAILSDELETE + `${id}`).subscribe((res: any) => {
         window.alert(res.message);
-        if(res.result){
-          const index = this.listWebsite.findIndex(item => item.wid === id);
-          // ลบข้อมูลออกจาก array โดยใช้ splice()
+        if (res.result) {
+          const index = this.dataSource.data.findIndex(item => item.wid === id);
           if (index !== -1) {
-            this.listWebsite.splice(index, 1);
+            this.dataSource.data.splice(index, 1);
+            this.dataSource = new MatTableDataSource<WebData>(this.dataSource.data);
           }
         }
       });
