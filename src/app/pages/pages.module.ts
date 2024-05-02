@@ -11,10 +11,11 @@ import * as TablerIcons from 'angular-tabler-icons/icons';
 import { PagesRoutes, PagesRoutingModule } from './pages-routing.module';
 import { LoginComponent } from './auth/login/login.component';
 import { HomepageComponent } from './homepage/homepage.component';
+import { HomepageAdminComponent } from './homepage-admin/homepage-admin.component';
 
 
 @NgModule({
-  declarations: [HomepageComponent],
+  declarations: [HomepageComponent, HomepageAdminComponent],
   imports: [
     CommonModule,
     PagesRoutingModule,

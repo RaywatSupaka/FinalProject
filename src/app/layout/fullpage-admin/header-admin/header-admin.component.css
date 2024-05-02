@@ -1,0 +1,20 @@
+button{
+    border: none; /* หรือ border: 0; */
+    background-color: white;
+  }
+
+  .topbar {
+    min-width: 200px;
+  }
+  
+  @media (max-width: 768px) {
+    .topbar {
+      min-width: 150px;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .topbar {
+      min-width: 100px;
+    }
+  }

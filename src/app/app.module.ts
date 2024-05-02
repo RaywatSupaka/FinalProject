@@ -24,6 +24,11 @@ import { TablerIconsModule } from 'angular-tabler-icons';
 import * as TablerIcons from 'angular-tabler-icons/icons';
 import { BrandingComponent } from './layout/fullpage/sidebar/branding.component';
 import { AppNavItemComponent } from './layout/fullpage/sidebar/nav-item/nav-item.component';
+import { FullpageAdminComponent } from './layout/fullpage-admin/fullpage-admin.component';
+import { HeaderAdminComponent } from './layout/fullpage-admin/header-admin/header-admin.component';
+import { SidebarAdminComponent } from './layout/fullpage-admin/sidebar-admin/sidebar-admin.component';
+import { NavItemAdminComponent } from './layout/fullpage-admin/sidebar-admin/nav-item-admin/nav-item-admin.component';
+import { BrandingAdminComponent } from './layout/fullpage-admin/sidebar-admin/branding.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +43,12 @@ import { AppNavItemComponent } from './layout/fullpage/sidebar/nav-item/nav-item
     HeaderComponent,
     SidebarComponent,
     BrandingComponent,
-    AppNavItemComponent
+    AppNavItemComponent,
+    FullpageAdminComponent,
+    HeaderAdminComponent,
+    SidebarAdminComponent,
+    NavItemAdminComponent,
+    BrandingAdminComponent,
   ],
   imports: [
     BrowserModule,

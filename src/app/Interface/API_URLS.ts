@@ -4,4 +4,7 @@ export const API_URLS = {
     USERPF: '/UserService/findById',
     USEREDIT: '/UserService/edit',
     REGIST: '/UserService/register',
+    WEBSITEDETAILS: '/WebsiteDetailsService/allWebsite',
+    WEBSITEDETAILSBYTYPE: '/WebsiteDetailsService/findByType',
+    WEBSITEDETAILSDELETE: '/AdminService/website/'
   };

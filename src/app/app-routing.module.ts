@@ -8,6 +8,8 @@ import { UserinfomodalComponent } from './Model/userinfomodal/userinfomodal.comp
 import { AuthGuard } from './service/authGuard';
 import { BlankComponent } from './layout/blank/blank.component';
 import { FullpageComponent } from './layout/fullpage/fullpage.component';
+import { FullpageAdminComponent } from './layout/fullpage-admin/fullpage-admin.component';
+import { HomepageAdminComponent } from './pages/homepage-admin/homepage-admin.component';
 
 const routes: Routes = [
   {
@@ -16,7 +18,7 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        redirectTo: '/homepage',
+        redirectTo: 'homepage',
         pathMatch: 'full',
       },
       {
@@ -31,6 +33,28 @@ const routes: Routes = [
       },
     ],
   },
+  {
+    path:'admin',
+    component: FullpageAdminComponent,
+    children: [
+      {
+        path: '',
+        redirectTo: 'homepageAdmin',
+        pathMatch: 'full',
+      },
+      {
+        path: 'homepageAdmin',
+        loadChildren: () => import('./pages/pages.module').then((m) => m.PagesModule),
+      },
+      {
+        path: 'ui-dashboard',
+        loadChildren: () =>
+          import('./pages/ui-dashboard-admin/ui-dashboard-admin.module').then(
+            (m) => m.UiDashboardAdminModule)
+      },
+    ],
+  },
+  
 ];
 
 @NgModule({
