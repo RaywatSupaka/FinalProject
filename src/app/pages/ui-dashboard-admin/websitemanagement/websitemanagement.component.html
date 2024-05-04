@@ -1,16 +1,16 @@
 <h3>websites controller</h3>
 
-<div class="container-btn">
+<div class="container-btn" (click)="create()">
     <button mat-flat-button class="btn-create" color="accent"> 
                 <i-tabler
                 class="plus"
                 name="plus"
                 matListItemIcon
-                (click)="create()"
             ></i-tabler> 
         Create
     </button>
 </div>
+
 <table mat-table *ngIf="dataSource.data.length > 0" [dataSource]="dataSource" class="mat-elevation-z8">
 
     <!-- Position Column -->

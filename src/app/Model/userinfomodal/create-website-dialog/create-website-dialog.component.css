@@ -1,0 +1,81 @@
+.input,
+select {
+    padding: 5px;
+    text-align: left;
+    padding-top: 5px;
+    width: 190px;
+    height: 30px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.input-description {
+    padding: 5px;
+    text-align: left;
+    padding-top: 5px;
+    width: 190px;
+    height: 60px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.modal-header {
+    padding: 8px !important;
+    border-bottom: none !important;
+    background-color: cornflowerblue;
+}
+
+.label {
+    font-size: 13px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    /* ระยะห่างระหว่างแถว */
+}
+
+.input-row {
+    display: flex;
+    gap: 20px;
+    /* ระยะห่างระหว่างคอลัมน์ */
+}
+
+.input-col {
+    flex: 1;
+    /* ทำให้คอลัมน์กระจายอย่างเท่ากัน */
+    display: flex;
+    flex-direction: column;
+}
+
+.input-col label {
+    margin-bottom: 5px;
+    /* ระยะห่างด้านล่างของ label */
+}
+
+.input {
+    width: 100%;
+}
+
+.input-description {
+    width: 100%;
+    height: 100px;
+    /* ความสูงของ textarea */
+}
+
+.input-img {
+    width: 100%;
+    margin-top: 5px;
+}
+
+.selected-image {
+    width: 224px;
+    height: 185px;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}

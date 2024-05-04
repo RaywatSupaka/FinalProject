@@ -22,8 +22,9 @@ export class BlogsComponent implements OnInit{
   listWebsite: WebData[] = [];
 
   fetchDataWebsite() {
-    const type: string = "A"
+    const type: string = "B"
     this.http.get(API_URLS.LOCAL + API_URLS.WEBSITEDETAILSBYTYPE + `?type=${type}`).subscribe((res: any) => {
+      console.log("Type = " , res);
       res.data.forEach((item: { wid: any; wname: any; local: any; status: any; description: any; imageShow: string; }) => {
         let objectURL = 'data:image/jpeg;base64,' + item.imageShow;
         const details: WebData = {

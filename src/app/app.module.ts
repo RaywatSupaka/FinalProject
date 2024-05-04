@@ -29,9 +29,11 @@ import { HeaderAdminComponent } from './layout/fullpage-admin/header-admin/heade
 import { SidebarAdminComponent } from './layout/fullpage-admin/sidebar-admin/sidebar-admin.component';
 import { NavItemAdminComponent } from './layout/fullpage-admin/sidebar-admin/nav-item-admin/nav-item-admin.component';
 import { BrandingAdminComponent } from './layout/fullpage-admin/sidebar-admin/branding.component';
+import { CreateWebsiteDialogComponent } from './Model/userinfomodal/create-website-dialog/create-website-dialog.component';
 
 @NgModule({
   declarations: [
+    CreateWebsiteDialogComponent,
     AppComponent,
     LoginComponent,
     HomepageComponent,

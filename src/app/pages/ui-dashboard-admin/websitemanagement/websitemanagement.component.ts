@@ -1,10 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { Component,ViewChild } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { DomSanitizer } from '@angular/platform-browser';
 import { API_URLS } from 'src/app/Interface/API_URLS';
 import { WebData } from 'src/app/Interface/WebData_OBJ';
+import { CreateWebsiteDialogComponent } from 'src/app/Model/userinfomodal/create-website-dialog/create-website-dialog.component';
 
 @Component({
   selector: 'app-websitemanagement',
@@ -27,7 +29,7 @@ export class WebsitemanagementComponent {
     'delete',
   ];
 
-  constructor(private http: HttpClient, private sanitizer: DomSanitizer) {
+  constructor(private http: HttpClient, private sanitizer: DomSanitizer,public dialog: MatDialog) {
     this.fetchDataWebsite();
   }
 
@@ -68,8 +70,14 @@ export class WebsitemanagementComponent {
     });
   }
 
-  create(){
-    throw new Error('Method not implemented.');
+  create(): void {
+    const dialogRef = this.dialog.open(CreateWebsiteDialogComponent, {
+      width: '250px',
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
   }
 
   edit(_t83: any) {

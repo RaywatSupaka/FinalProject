@@ -1,0 +1,52 @@
+<h1 mat-dialog-title>Create New Item</h1>
+<div mat-dialog-content>
+  <div class="container">
+    <div class="input-row">
+      <div class="input-col">
+        <label for="wname">Website Name:</label>
+        <input id="wname" class="input" type="text" [(ngModel)]="webDetails.wname" placeholder="Website Name">
+      </div>
+      <div class="input-col">
+        <label for="local">Local:</label>
+        <input id="local" class="input" type="text" [(ngModel)]="webDetails.local" placeholder="Local">
+      </div>
+    </div>
+    <div class="input-row">
+      <div class="input-col">
+        <label for="status">Status:</label>
+        <input id="status" class="input" type="text" [(ngModel)]="webDetails.status" placeholder="Status">
+      </div>
+      <div class="input-col">
+        <label for="type">Type:</label>
+        <select id="type" class="form-control" [(ngModel)]="webDetails.type">
+          <option value="" disabled selected hidden>กรุณาเลือกประเภท</option>
+          <option>Blogs</option>
+          <option>E-commerce</option>
+          <option>Education</option>
+          <option>Insurance</option>
+          <option>News</option>
+          <option>Social</option>
+        </select>
+      </div>
+    </div>
+    <div class="input-row">
+      <div class="input-col">
+        <label for="description">Description:</label>
+        <textarea id="description" class="input-description" [(ngModel)]="webDetails.description"
+          placeholder="Description"></textarea>
+      </div>
+      <div class="input-col">
+        <label for="image">Image:</label>
+        <div class="position-pic">
+          <img id="selected-image" class="selected-image" src="" alt="No image Files">
+         </div>
+        <input id="image" class="input-img" type="file" (change)="onFileSelected($event)" accept="image/*">
+      </div>      
+    </div>
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button (click)="submitForm()">Submit</button>
+    <button mat-button (click)="onCancelClick()">Cancel</button>
+    <!-- Add submit button here if needed -->
+  </div>
+</div>
