@@ -6,7 +6,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { DomSanitizer } from '@angular/platform-browser';
 import { API_URLS } from 'src/app/Interface/API_URLS';
 import { WebData } from 'src/app/Interface/WebData_OBJ';
-import { CreateWebsiteDialogComponent } from 'src/app/Model/userinfomodal/create-website-dialog/create-website-dialog.component';
+import { CreateWebsiteDialogComponent } from 'src/app/Model/userinfomodal/create-website-dialog/CreateWebsiteDialogComponent';
 
 @Component({
   selector: 'app-websitemanagement',
@@ -32,6 +32,7 @@ export class WebsitemanagementComponent {
   constructor(private http: HttpClient, private sanitizer: DomSanitizer,public dialog: MatDialog) {
     this.fetchDataWebsite();
   }
+
 
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
@@ -65,19 +66,22 @@ export class WebsitemanagementComponent {
         });
         this.dataSource.data = this.listWebsite;
       } else {
-        window.alert('ไม่พบข้อมูล');
+        console.log("ไม่พบข้อมูล")
       }
     });
   }
 
   create(): void {
     const dialogRef = this.dialog.open(CreateWebsiteDialogComponent, {
-      width: '250px',
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
+      if (result.result) {
+        console.log('The dialog was closed');
+        location.reload();
+      }
     });
+
   }
 
   edit(_t83: any) {
@@ -99,5 +103,6 @@ export class WebsitemanagementComponent {
       });
     }
   }
+
   
 }

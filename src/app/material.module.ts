@@ -10,7 +10,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
 import { MatTableModule } from '@angular/material/table';
 import { MatDialogModule } from '@angular/material/dialog';
-
+import {MatButtonModule} from '@angular/material/button';
 
 
 @NgModule({
@@ -25,7 +25,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatFormFieldModule,
     MatSelectModule,
     MatTableModule,
-    MatDialogModule
+    MatDialogModule,
+    MatButtonModule
 ],
 })
 export class MaterialModule {}

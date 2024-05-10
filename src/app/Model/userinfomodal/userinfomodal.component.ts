@@ -25,7 +25,8 @@ export class UserinfomodalComponent {
     password: '',
     age: 0,
     address: '',
-    roles: ''
+    roles: '',
+    img: ''
   }
 
 
@@ -40,7 +41,8 @@ export class UserinfomodalComponent {
         password: this.userData.password,
         age: this.userData.age,
         address: this.userData.address,
-        roles: this.userData.roles
+        roles: this.userData.roles,
+        img:''
       }
     }
   }

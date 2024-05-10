@@ -13,17 +13,10 @@ export class PagesRoutingModule { }
 
 export const PagesRoutes: Routes = [
   {
-    path: '',
-    component: HomepageComponent,
+    path:'',
+    component:HomepageComponent,
     data: {
-      title: 'Starter Page',
-    },
-  },
-  {
-    path: 'admin',
-    component: HomepageAdminComponent,
-    data: {
-      title: 'Admin Page',
-    },
-  },
+    title: 'Starter Page',
+    }
+  }
 ];

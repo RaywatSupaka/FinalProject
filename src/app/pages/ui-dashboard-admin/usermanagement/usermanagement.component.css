@@ -1,0 +1,52 @@
+h3 {
+    font-size: 24px;
+    text-transform: uppercase;
+}
+
+table {
+    width: 100%;
+}
+
+.mdc-data-table__cell,
+.mdc-data-table__header-cell {
+    text-align: center;
+}
+
+
+.delete {
+    color: black;
+}
+
+.delete:hover {
+    color: red;
+    cursor: pointer;
+}
+
+.edit {
+    color: black;
+}
+
+.edit:hover {
+    color: green;
+    cursor: pointer;
+}
+
+.img {
+    width: 60px;
+    height: auto;
+}
+
+.container-btn {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+}
+
+.plus {
+    width: 15px;
+    height: auto;
+}
+
+.btn-create:hover {
+    background-color: #4caf50;
+}

@@ -1,9 +1,9 @@
-import { Component, ViewEncapsulation, OnInit } from '@angular/core';
+import { Component, ViewEncapsulation, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { DomSanitizer } from '@angular/platform-browser';
 import { API_URLS } from 'src/app/Interface/API_URLS';
 import { WebData } from 'src/app/Interface/WebData_OBJ';
-
+import Swiper from 'swiper';
 
 @Component({
   selector: 'app-homepage',
@@ -12,6 +12,30 @@ import { WebData } from 'src/app/Interface/WebData_OBJ';
   encapsulation: ViewEncapsulation.None,
 })
 export class HomepageComponent implements OnInit{
+  
+  @ViewChild('swiperContainer') swiperContainer!: ElementRef;
+
+  swiper: Swiper | undefined;
+
+  ngAfterViewInit() {
+    this.swiper = new Swiper(this.swiperContainer.nativeElement, {
+      effect: 'coverflow',
+      grabCursor: true,
+      centeredSlides: true,
+      slidesPerView: 'auto',
+      coverflowEffect: {
+        rotate: 0,
+        stretch: 0,
+        depth: 300,
+        modifier: 1,
+        slideShadows: false,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+      },
+    });
+  }
+
   constructor(private http: HttpClient, private sanitizer: DomSanitizer) {}
 
   ngOnInit() {

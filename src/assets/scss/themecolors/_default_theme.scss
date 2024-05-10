@@ -73,11 +73,11 @@ $bluetheme: mat.define-light-theme(
       .mdc-list-group__subheader {
         margin: 12px 0;
         text-transform: uppercase;
-        font-size: 0.75rem;
+        font-size: 0.85rem;
         font-weight: 700;
         margin-top: 24px;
-        color: $white ;
-        background-color: #f36868;
+        color: black ;
+        background-color: #fc9b24;
         border-radius: 4px;
         padding: 8px;
       }
@@ -100,13 +100,13 @@ $bluetheme: mat.define-light-theme(
         }
 
         &.activeMenu {
-          background-color: orange;
+          background-color: rgb(237, 181, 84);
           .mdc-list-item__primary-text {
-            color: $white !important;
+            color: black !important;
           }
 
           .mat-mdc-list-item-icon {
-            color: $white !important;
+            color: black !important;
             margin-bottom: 15px !important;
           }
 

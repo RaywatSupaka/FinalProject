@@ -10,7 +10,6 @@ import { FormsModule } from '@angular/forms';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import * as TablerIcons from 'angular-tabler-icons/icons';
 import { TablerIconsModule } from 'angular-tabler-icons';
-import { WebsitecreateComponent } from './websitecreate/websitecreate.component';
 import {MatButtonModule} from '@angular/material/button';
 import {MatDialogModule} from '@angular/material/dialog';
 
@@ -19,7 +18,6 @@ import {MatDialogModule} from '@angular/material/dialog';
   declarations: [
     UsermanagementComponent,
     WebsitemanagementComponent,
-    WebsitecreateComponent
   ],
   imports: [
     CommonModule,

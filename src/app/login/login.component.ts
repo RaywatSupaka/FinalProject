@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit{
         if (res.result) {
             alert(res.message);
             localStorage.setItem('loginToken', res.data.token);
-            this.router.navigateByUrl('/dbupage');
+            this.router.navigateByUrl('/home');
         } else {
             alert(res.message);
         }

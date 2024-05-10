@@ -1,15 +1,12 @@
-import { Component, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
-import { HomepageComponent } from './homepage/homepage.component';
-import { DBUpageComponent } from './UserManagement/dbupage/dbupage.component';
-import { PFUpageComponent } from './UserManagement/pfupage/pfupage.component';
-import { UserinfomodalComponent } from './Model/userinfomodal/userinfomodal.component';
-import { AuthGuard } from './service/authGuard';
-import { BlankComponent } from './layout/blank/blank.component';
 import { FullpageComponent } from './layout/fullpage/fullpage.component';
 import { FullpageAdminComponent } from './layout/fullpage-admin/fullpage-admin.component';
+import { AuthGuard } from './service/authGuard';
+import { HomepageComponent } from './homepage/homepage.component';
 import { HomepageAdminComponent } from './pages/homepage-admin/homepage-admin.component';
+
 
 const routes: Routes = [
   {
@@ -44,7 +41,7 @@ const routes: Routes = [
       },
       {
         path: 'homepageAdmin',
-        loadChildren: () => import('./pages/pages.module').then((m) => m.PagesModule),
+        component: HomepageAdminComponent,
       },
       {
         path: 'ui-dashboard',
@@ -57,6 +54,11 @@ const routes: Routes = [
   {
     path:'login',
     component:LoginComponent
+  },
+  {
+    path:'home',
+    component:HomepageComponent,
+    canActivate: [AuthGuard]
   }
   
 ];

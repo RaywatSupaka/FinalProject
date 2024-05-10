@@ -1,0 +1,71 @@
+<div class="content-header">
+    <h1 mat-dialog-title>Create New Website</h1>
+</div>
+<div mat-dialog-content>
+    <div class="container">
+
+        <div class="input-row">
+
+            <div class="input-col">
+                <label for="wname">Website Name:</label>
+                <input id="wname" class="input" type="text" [(ngModel)]="UserDetails" placeholder="Website Name">
+            </div>
+
+            <div class="input-col">
+                <label for="local">Local:</label>
+                <input id="local" class="input" type="text" [(ngModel)]="UserDetails" placeholder="Local">
+            </div>
+
+        </div>
+
+        <div class="input-row">
+
+            <div class="input-col">
+                <label for="status">Status:</label>
+                <input id="status" class="input" type="text" [(ngModel)]="UserDetails" placeholder="Status">
+            </div>
+
+            <div class="input-col">
+                <label for="type">Type:</label>
+                <select id="type" class="form-control" [(ngModel)]="UserDetails">
+                    <option value="" disabled selected hidden>
+                        ประเภท
+                    </option>
+                    <option>Blogs</option>
+                    <option>E-commerce</option>
+                    <option>Education</option>
+                    <option>Insurance</option>
+                    <option>News</option>
+                    <option>Social</option>
+                </select>
+            </div>
+
+        </div>
+
+        <div class="input-row">
+
+            <div class="input-col">
+                <label for="description">Description:</label>
+                <textarea id="description" class="input-description" [(ngModel)]="UserDetails"
+                    placeholder="Description"></textarea>
+            </div>
+
+            <div class="input-col">
+                <label for="image">Image:</label>
+                <div class="position-pic">
+                    <img id="selected-image" class="selected-image" [src]="imageUrl" alt="No image selected">
+                </div>
+                <input id="image" class="input-img" type="file" multiple (change)="onFileSelected($event)"
+                    accept="image/*">
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<div mat-dialog-actions>
+    <button mat-stroked-button (click)="submitForm()">Submit</button>
+    <button mat-stroked-button (click)="onCancelClick()">Cancel</button>
+    <!-- Add submit button here if needed -->
+</div>

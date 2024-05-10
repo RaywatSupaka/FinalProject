@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA,NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
@@ -9,10 +9,10 @@ import { NgApexchartsModule } from 'ng-apexcharts';
 import { TablerIconsModule } from 'angular-tabler-icons';
 import * as TablerIcons from 'angular-tabler-icons/icons';
 import { PagesRoutes, PagesRoutingModule } from './pages-routing.module';
-import { LoginComponent } from './auth/login/login.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { HomepageAdminComponent } from './homepage-admin/homepage-admin.component';
-
+import { register } from 'swiper/element/bundle';
+register();
 
 @NgModule({
   declarations: [HomepageComponent, HomepageAdminComponent],
@@ -26,5 +26,6 @@ import { HomepageAdminComponent } from './homepage-admin/homepage-admin.componen
     TablerIconsModule.pick(TablerIcons),
   ],
   exports: [TablerIconsModule],
+  schemas:[CUSTOM_ELEMENTS_SCHEMA]
 })
 export class PagesModule { }

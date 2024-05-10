@@ -19,7 +19,8 @@ export class CustomeInterceptor implements HttpInterceptor {
     // ตรวจสอบว่า request นี้คือ request ที่ไม่ต้องการ Token หรือไม่
     if (request.url.includes(API_URLS.LOGIN) || request.url.includes(API_URLS.REGIST) 
       || request.url.includes(API_URLS.WEBSITEDETAILS) ||  request.url.includes(API_URLS.WEBSITEDETAILSBYTYPE) 
-      || request.url.includes(API_URLS.WEBSITEDETAILSDELETE) 
+      || request.url.includes(API_URLS.WEBSITEDETAILSDELETE) || request.url.includes(API_URLS.ADDWBSITEDETAIL)
+      || request.url.includes(API_URLS.USERSHOWALL) || request.url.includes(API_URLS.USERDELETE) 
     ){
       return next.handle(request);  // ไม่แนบ Token สำหรับ request สำหรับ login
     }

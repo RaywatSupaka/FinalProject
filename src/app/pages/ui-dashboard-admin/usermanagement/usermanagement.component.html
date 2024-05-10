@@ -1,1 +1,92 @@
-<p>usermanagement works!</p>
+<h4 style="font-weight: bold; font-size: 24px;">Users Controller</h4>
+
+<div class="container-btn" >
+    <button mat-flat-button class="btn-create" color="accent" (click)="create()"> 
+                <i-tabler
+                class="plus"
+                name="plus"
+                matListItemIcon
+            ></i-tabler> 
+        Create
+    </button>
+</div>
+
+<table mat-table *ngIf="dataSource.data.length > 0" [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="position">
+        <th mat-header-cell *matHeaderCellDef> No. </th>
+        <td mat-cell *matCellDef="let element; let i = index"> {{ paginator.pageIndex * paginator.pageSize + i + 1 }}
+        </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="uid">
+        <th mat-header-cell *matHeaderCellDef> Uid </th>
+        <td mat-cell *matCellDef="let element"> {{ element.uid }} </td>
+    </ng-container>
+
+    <!-- Local Column -->
+    <ng-container matColumnDef="nid">
+        <th mat-header-cell *matHeaderCellDef> Nid </th>
+        <td mat-cell *matCellDef="let element"> {{ element.nid }} </td>
+    </ng-container>
+
+    <!-- Status Column -->
+    <ng-container matColumnDef="username">
+        <th mat-header-cell *matHeaderCellDef> Username </th>
+        <td mat-cell *matCellDef="let element"> {{ element.username }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="age">
+        <th mat-header-cell *matHeaderCellDef> Age </th>
+        <td mat-cell *matCellDef="let element"> {{ element.age }} </td>
+    </ng-container>
+
+    <!-- Description Column -->
+    <ng-container matColumnDef="address">
+        <th mat-header-cell *matHeaderCellDef> Address </th>
+        <td mat-cell *matCellDef="let element"> {{ element.address }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="role">
+        <th mat-header-cell *matHeaderCellDef> role </th>
+        <td mat-cell *matCellDef="let element"> {{ element.roles }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="img">
+        <th mat-header-cell *matHeaderCellDef> Image </th>
+        <td mat-cell *matCellDef="let element"> <img [src]="element.img" class = "img"></td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="edit">
+        <th mat-header-cell *matHeaderCellDef> Edit </th>
+        <td mat-cell *matCellDef="let element">
+            <i-tabler
+            class="edit"
+            name="edit"
+            matListItemIcon
+            (click)="edit(element)"
+          ></i-tabler> 
+        </td>
+    </ng-container>
+
+    <ng-container matColumnDef="delete">
+        <th mat-header-cell *matHeaderCellDef> Delete </th>
+        <td mat-cell *matCellDef="let element">
+            <i-tabler
+            class="delete"
+            name="trash"
+            matListItemIcon
+            (click)="deleteItem(element.uid)"
+        ></i-tabler> 
+        </td>
+    </ng-container>
+
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+<mat-paginator #paginator [length]="dataSource.data.length" [pageSize]="4" [pageSizeOptions]="[4, 8, 16, 32]">
+</mat-paginator>

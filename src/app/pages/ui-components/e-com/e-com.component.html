@@ -1,1 +1,11 @@
-<p>e-com works!</p>
+<div class="card-container">
+    <tr *ngFor="let website of listWebsite">
+      <div class="card">
+        <img [src]="website.img">
+        <div class="card-content">
+          <h3>{{ website.wname }}</h3>
+          <p class="truncate">{{ website.description }}</p>
+          <a href="" class="btn">Read More</a>
+        </div>
+      </div>
+  </div>

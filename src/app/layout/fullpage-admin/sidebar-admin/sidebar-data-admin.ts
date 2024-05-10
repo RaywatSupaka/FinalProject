@@ -18,11 +18,6 @@ export const navItems: NavItem[] = [
     route: '/admin/ui-dashboard/userManagement',
   },
   {
-    displayName: 'Register',
-    iconName: 'user-cog',
-    route: '/admin',
-  },
-  {
     navCap: 'website-management',
   },
   {
@@ -31,21 +26,11 @@ export const navItems: NavItem[] = [
     route: '/admin/ui-dashboard/websiteManagement',
   },
   {
-    displayName: 'Website Controller',
-    iconName: 'user-cog',
-    route: '/admin',
-  },
-  {
     navCap: 'Auth-Permission',
   },
   {
-    displayName: 'Icons',
+    displayName: 'Permission',
     iconName: 'mood-smile',
-    route: '/extra/icons',
-  },
-  {
-    displayName: 'Sample Page',
-    iconName: 'aperture',
-    route: '/extra/sample-page',
+    route: '/admin',
   },
 ];
