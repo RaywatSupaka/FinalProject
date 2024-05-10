@@ -4,6 +4,12 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>LoginPage</title>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap">
+	<style>
+		body , input , p , button{
+				font-family: 'Prompt', sans-serif !important;
+			}
+	</style>
 </head>
 <body>
 	<h2>Sign in/up Form</h2>
@@ -11,11 +17,12 @@
 	<div class="form-container sign-up-container">
 		<form action="#">
 			<h1>Create Account</h1>
-			<input type="text" placeholder="nid" name="nid" [(ngModel)]="registObject.nid" />
-			<input type="email" placeholder="username" name="username" [(ngModel)]="registObject.username" />
-			<input type="password" placeholder="Password" name="password" [(ngModel)]="registObject.password" />
-			<input type="text" placeholder="age" name="age" [(ngModel)]="registObject.age" />
-			<input type="text" placeholder="address" name="address" [(ngModel)]="registObject.address" />
+			<input type="text" placeholder="กรุณากรอก NID" name="nid" [(ngModel)]="registObject.nid" />
+			<input type="email" placeholder="กรุณากรอก Username" name="username" [(ngModel)]="registObject.username" />
+			<input type="password" placeholder="กรุณากรอก Password" name="password" [(ngModel)]="registObject.password" />
+			<!--<input type="text" placeholder="กรุณากรอกอายุ" name="age" [(ngModel)]="registObject.age" />-->
+			<input type="text" placeholder="กรุณากรอกอายุ" name="age"  />
+			<input type="text" placeholder="กรุณากรอกที่อยู่" name="address" [(ngModel)]="registObject.address" />
 			<button (click)="onRegister()">Sign Up</button>
 		</form>
 	</div>

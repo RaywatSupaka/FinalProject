@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap');
 * {
 	box-sizing: border-box;
 }
@@ -8,17 +9,19 @@ body {
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Prompt', sans-serif !important;
 	height: 100vh;
 	margin: -20px 0 50px;
 }
 
 h1 {
+	font-family: 'Prompt', sans-serif !important;
 	font-weight: bold;
 	margin: 0;
 }
 
 h2 {
+	font-family: 'Prompt', sans-serif !important;
 	text-align: center;
 }
 
@@ -43,8 +46,8 @@ a {
 
 button {
 	border-radius: 20px;
-	border: 1px solid #FF4B2B;
-	background-color: #FF4B2B;
+	border: 1px solid #3c97bf;
+	background-color: #3c97bf;
 	color: #FFFFFF;
 	font-size: 12px;
 	font-weight: bold;
@@ -157,9 +160,9 @@ input {
 }
 
 .overlay {
-	background: #FF416C;
-	background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);
-	background: linear-gradient(to right, #FF4B2B, #FF416C);
+	background: #3c97bf;
+	background: -webkit-linear-gradient(to right, #64cefc, #3c97bf);
+	background: linear-gradient(to right,#64cefc, #3c97bf);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: 0 0;
@@ -240,7 +243,7 @@ footer p {
 }
 
 footer i {
-    color: red;
+    color: blue;
 }
 
 footer a {

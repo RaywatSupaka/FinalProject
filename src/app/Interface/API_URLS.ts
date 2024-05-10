@@ -1,5 +1,5 @@
 export const API_URLS = {
-    LOCAL: 'http://localhost:8080',
+    LOCAL: 'http://localhost:4200',
     LOGIN: '/UserService/login',
     USERPF: '/UserService/findById',
     USEREDIT: '/UserService/edit',
