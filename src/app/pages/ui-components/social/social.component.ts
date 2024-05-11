@@ -1,8 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, ViewEncapsulation } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { DomSanitizer } from '@angular/platform-browser';
 import { API_URLS } from 'src/app/Interface/API_URLS';
 import { WebData } from 'src/app/Interface/WebData_OBJ';
+import { DetailsDialogComponent } from 'src/app/Model/userinfomodal/details-dialog/details-dialog.component';
 
 @Component({
   selector: 'app-social',
@@ -11,10 +13,30 @@ import { WebData } from 'src/app/Interface/WebData_OBJ';
   encapsulation: ViewEncapsulation.None,
 })
 export class SocialComponent {
-  constructor(private http: HttpClient, private sanitizer: DomSanitizer) {}
+  constructor(private http: HttpClient, private sanitizer: DomSanitizer, public dialog: MatDialog) {}
 
   ngOnInit() {
     this.fetchDataWebsite();
+  }
+
+  openDialog(websiteName: WebData) {
+    
+    const dialogRef = this.dialog.open(DetailsDialogComponent, {
+      data: { websiteName: websiteName }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+    });
+  }
+
+  checkStatus(websiteName: WebData) {
+    this.http.get(API_URLS.LOCAL + API_URLS.CHECKSTATUSUSER + `${websiteName.wid}`).subscribe((res: any) => {
+      if (res.result) {
+        window.open(websiteName.local, '_blank');
+      } else {
+        this.openDialog(websiteName);
+      }
+    });
   }
 
   listWebsite: WebData[] = [];
