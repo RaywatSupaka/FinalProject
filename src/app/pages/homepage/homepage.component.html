@@ -3,16 +3,25 @@
 <section #swiperContainer class="swiper mySwiper">
   <div class="swiper-wrapper">
 
-    <div class="card swiper-slide" *ngFor="let website of listWebsite">
-      <div class="card__image">
-        <img [src]="website.img" alt="card image">
+    <ng-container *ngIf="listWebsiteWithStatus && listWebsiteWithStatus.length > 0; else noData">
+      <div class="card swiper-slide" *ngFor="let website of listWebsiteWithStatus">
+        <div class="card__image">
+          <img [src]="website.img" alt="card image">
+        </div>
+        <div class="card-content">
+          <h3>{{ website.wname }}</h3>
+          <p class="truncate">{{ website.description }}</p>
+          <a (click)="checkStatus(website)" class="btn">Read More</a>
+        </div>
       </div>
-      <div class="card-content">
-        <h3>{{ website.wname }}</h3>
-        <p class="truncate">{{ website.description }}</p>
-        <a href="" class="btn">Read More</a>
+    </ng-container>
+
+    <ng-template #noData>
+      <div class="no-data-message" style="height: 80px; display: flex; align-items: center;">
+        <p class="no-data-text">Don't have Website</p>
       </div>
-    </div>
+    </ng-template>
+    
 
   </div>
 </section>
@@ -25,7 +34,7 @@
       <div class="card-content">
         <h3>{{ website.wname }}</h3>
         <p class="truncate">{{ website.description }}</p>
-        <a href="" class="btn">Read More</a>
+        <a (click)="checkStatus(website)" class="btn">Read More</a>
       </div>
     </div>
 </div>

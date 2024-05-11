@@ -14,3 +14,10 @@
 .swiper-slide:not(.swiper-slide-active) {
     filter: blur(1px);
 }
+
+  
+  .no-data-text {
+    font-size: 40px;
+    color: rgb(194, 186, 186);
+  }
+  

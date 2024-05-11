@@ -94,11 +94,7 @@ export class WebsitemanagementComponent {
       this.http.delete(API_URLS.LOCAL + API_URLS.WEBSITEDETAILSDELETE + `${id}`).subscribe((res: any) => {
         window.alert(res.message);
         if (res.result) {
-          const index = this.dataSource.data.findIndex(item => item.wid === id);
-          if (index !== -1) {
-            this.dataSource.data.splice(index, 1);
-            this.dataSource = new MatTableDataSource<WebData>(this.dataSource.data);
-          }
+          location.reload();
         }
       });
     }

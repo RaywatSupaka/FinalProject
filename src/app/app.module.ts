@@ -31,6 +31,7 @@ import { NavItemAdminComponent } from './layout/fullpage-admin/sidebar-admin/nav
 import { BrandingAdminComponent } from './layout/fullpage-admin/sidebar-admin/branding.component';
 import { CreateWebsiteDialogComponent } from './Model/userinfomodal/create-website-dialog/CreateWebsiteDialogComponent';
 import { CreateUserDialogComponent } from './Model/userinfomodal/create-user-dialog/create-user-dialog.component';
+import { DetailsDialogComponent } from './Model/userinfomodal/details-dialog/details-dialog.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +54,7 @@ import { CreateUserDialogComponent } from './Model/userinfomodal/create-user-dia
     NavItemAdminComponent,
     BrandingAdminComponent,
     CreateUserDialogComponent,
+    DetailsDialogComponent,
   ],
   imports: [
     BrowserModule,

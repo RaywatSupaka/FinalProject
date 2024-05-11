@@ -10,8 +10,9 @@ import { HomepageAdminComponent } from './pages/homepage-admin/homepage-admin.co
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'user',
     component: FullpageComponent,
+    canActivate: [AuthGuard],
     children: [
       {
         path: '',
@@ -33,6 +34,7 @@ const routes: Routes = [
   {
     path:'admin',
     component: FullpageAdminComponent,
+    canActivate: [AuthGuard],
     children: [
       {
         path: '',
@@ -56,9 +58,8 @@ const routes: Routes = [
     component:LoginComponent
   },
   {
-    path:'home',
+    path:'',
     component:HomepageComponent,
-    canActivate: [AuthGuard]
   }
   
 ];

@@ -14,4 +14,14 @@ export const API_URLS = {
     //user-admin
     USERSHOWALL: '/AdminService/findAllUser',
     USERDELETE: '/AdminService/userdel',
+
+    //validate
+    VALIDATETOKEN: '/UserService/validate',
+    //check role
+    CHECKROLEBASE: '/UserService/extractRoles',
+    //fetchDataWebsiteWithStatus
+    SHOWWEBSITEBYSTATUS: '/WebsiteDetailsService/status',
+    //checkStatusUserForRegiswebsite
+    CHECKSTATUSUSER: '/UserService/checkStatus/',
+    
   };

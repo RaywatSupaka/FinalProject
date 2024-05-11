@@ -7,7 +7,7 @@ export const navItems: NavItem[] = [
   {
     displayName: 'Home',
     iconName: 'home',
-    route: '',
+    route: '/user',
   },
   {
     navCap: 'Category',
@@ -15,31 +15,31 @@ export const navItems: NavItem[] = [
   {
     displayName: 'E-commerce',
     iconName: 'shopping-bag',
-    route: '/ui-components/ecom',
+    route: '/user/ui-components/ecom',
   },
   {
     displayName: 'Social Media',
     iconName: 'brand-hipchat',
-    route: '/ui-components/social',
+    route: '/user/ui-components/social',
   },
   {
     displayName: 'News',
     iconName: 'news',
-    route: '/ui-components/news',
+    route: '/user/ui-components/news',
   },
   {
     displayName: 'Educational',
     iconName: 'school',
-    route: '/ui-components/education',
+    route: '/user/ui-components/education',
   },
   {
     displayName: 'Blogs',
     iconName: 'brand-blogger',
-    route: '/ui-components/blogs',
+    route: '/user/ui-components/blogs',
   },
   {
     displayName: 'Insurance',
     iconName: 'ambulance',
-    route: '/ui-components/insurance',
+    route: '/user/ui-components/insurance',
   },
 ];
