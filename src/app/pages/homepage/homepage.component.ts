@@ -52,7 +52,6 @@ export class HomepageComponent implements OnInit{
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
     });
   }
 
@@ -96,9 +95,14 @@ export class HomepageComponent implements OnInit{
     });
   }
 
-  checkStatus(websiteName: WebData){
+  checkStatus(websiteName: WebData) {
     this.http.get(API_URLS.LOCAL + API_URLS.CHECKSTATUSUSER + `${websiteName.wid}`).subscribe((res: any) => {
-      console.log("test",res);
-    })
+      if (res.result) {
+        window.open(websiteName.local, '_blank');
+      } else {
+        this.openDialog(websiteName);
+      }
+    });
   }
+  
 }

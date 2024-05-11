@@ -23,5 +23,7 @@ export const API_URLS = {
     SHOWWEBSITEBYSTATUS: '/WebsiteDetailsService/status',
     //checkStatusUserForRegiswebsite
     CHECKSTATUSUSER: '/UserService/checkStatus/',
+    //UpdateStatusUser
+    UPDATESTATUSUSER: '/UserService/updateStatus/',
     
   };
