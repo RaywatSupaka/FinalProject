@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   selector: 'app-branding',
   template: `
     <div class="branding">
-      <a href="/" style="display: flex; align-items: center; text-decoration: none !important;">
+      <a href="/user" style="display: flex; align-items: center; text-decoration: none !important;">
         <img
           src="./assets/images/logos/Picture3.jpg"
           class="align-middle m-2"
